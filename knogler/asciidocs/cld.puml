@@ -1,0 +1,68 @@
+@startuml
+class Person{
+String name
+}
+
+class Verein{
+List<Person> mitglieder
+List<Team> teams
+}
+
+class Vertrag {
+LocalDateTime anfang
+LocalDateTime ende
+Person person
+Verein verein
+Job job
+}
+
+enum Job{
+Spieler
+Trainer
+Zeugwart
+}
+
+class Team{
+String name
+List<Person> spieler
+int punkte
+int tabellenPosition
+double torverhaeltnis
+}
+
+class Match{
+Team heimTeam
+Team gastTeam
+int gastTore
+int heimTore
+List<Person> schiedsrichter
+List<Person> spieler
+}
+
+class Einsatz{
+Person person
+LocalDateTime von
+LocalDateTime bis
+Position position
+}
+
+enum Position{
+Verteidiger
+Stürmer
+}
+
+Match "*" --* "2" Team
+
+Match "1" *-- "*"Einsatz
+
+Einsatz "*" o-- "1" Position
+
+Team "*" --* "1" Verein
+
+Person "1" o-- "*" Vertrag
+
+Vertrag "*" --o "1" Verein
+
+Vertrag "*" *-- "1" Job
+
+@enduml

@@ -1,0 +1,71 @@
+= Knogler Fußballliga
+:toc:
+:sectnums:
+:icons: font
+
+== User Stories
+Eine Person geht einen Vertrag mit einem Verein ein.
+
+Ein Team spielt ein Match.
+
+Eine Person spielt bei einem Match mit.
+
+
+== Use Case Diagram
+[plantuml, target=./images/anwend-diag, format=png]
+....
+@startuml
+left to right direction
+
+usecase "geht einen Vertrag mit einem Team ein" as UC1
+
+usecase "nimmt bei einem Match teil" as UC2
+
+usecase "spielt bei einem Match mit" as UC3
+
+Person --> UC1
+Team --> UC2
+Person --> UC3
+@enduml
+....
+
+== CLD
+
+["plantuml", "cld"]
+----
+include::cld.puml[]
+----
+
+== Fragen
+=== Was bedeutet Stashing? In welchen Situationen wird dieses angewendet?
+[TIP]
+Es wird der aktuelle lokale Stand "zwischengespeichert", damit man in einem anderen Repo arebiten kann ohne den
+aktuellen Stand pushen und dann wieder pullen zu müssen. (Bsp. Wenn ein Bug beim Kunden auftritt, aber gerade an einem
+Feature gearbeitet wird, kann der Entwickler den Bug schnell beheben ohne das unvollständige Feature pushen und wieder
+pullen zu müssen)
+
+=== Was bedeutet Cherry Picking? In welchen Situationen wird dieses angewendet?
+[TIP]
+Cherry Picking beschreibt das gezielte heraussuchen und clonen eines bestimmten commits (meist in einem anderen Branch)
+Dies erfolgt wennd der Stand eines bestimmten Commits zb in einem anderen Branch gebraucht wird.
+
+=== Welche Möglichkeiten gibt es zur Container-Orchestrierung?
+[TIP]
+Z.b Kubernetes, Docker Compose
+
+==== In welchen Situationen werden diese Möglichkeiten verwendet?
+[TIP]
+Bei der Orchestrierung kann z.B festgelegt werden, dass der Container der die DB beinhaltet als erstes Startet und erst
+dann der Server, der die DB benötigt. Z.b kann aber auch der Container, der das Frontend beinhaltet, erst gestartet
+werden wenn der Container, der das Backend beinhaltet, erfolgreich gestartet worden ist.
+
+=== Erläutern Sie den Unterschied zwischen Product Backlog und Sprint Backlog
+[TIP]
+Im Product Backlog befinden sich alle Funktionalitäten, die im laufe der Projektentwicklung implementiert werden müssen.
+Der Sprint Backlog beinhaltet alle Punkte, die im aktuellen Sprit implementiert werden müssen.
+(also eine Untermenge des Product Backlogs)
+
+=== Was versteht man unter einer Lookup-Table?
+[TIP]
+Ein Lookup Table beinhaltet daten, welche immer wieder gebraucht werdem. Somit werden sie nur 1 mal gespeichert und
+können von überall ausgelesen werden.
