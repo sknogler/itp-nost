@@ -41,7 +41,7 @@ include::cld.puml[]
 == Fragen
 === Was bedeutet Stashing? In welchen Situationen wird dieses angewendet?
 [TIP]
-Beim Stashing wird der aktuelle lokale Zwischenstand versteckt bzw zwischengespeichert. Somit kann in einen anderen Branch gewechselt werden. Z.B wird auf einem Feature Branch ein Feature entwickelt, welches aber noch nicht bereit zum committen ist. Es muss aber auf einem anderen Branch ein Bug schnellstmöglich behoben werden. Mit stashing kann der aktuelle Feature Branch gesichert weredn ohne committet zu werden und es kann ohne Probleme am anderen Branch der Bug behoben werden.
+Beim Stashing wird der aktuelle lokale Zwischenstand versteckt bzw zwischengespeichert. Somit kann in einen anderen Branch gewechselt werden. Z.B wird auf einem Feature Branch ein Feature entwickelt, welches aber noch nicht bereit zum committen ist. Es muss aber auf einem anderen Branch ein Bug schnellstmöglich behoben werden. Mit stashing kann der aktuelle lokal Stand des Feature Branches gesichert werden ohne committet zu werden und es kann ohne Probleme am anderen Branch der Bug behoben werden.
 
 === Was bedeutet Cherry Picking? In welchen Situationen wird dieses angewendet?
 [TIP]
