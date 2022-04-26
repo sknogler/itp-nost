@@ -4,11 +4,12 @@
 :icons: font
 
 == User Stories
-Eine Person geht einen Vertrag mit einem Verein ein.
 
-Ein Team spielt ein Match.
+Als Person möchte ich einen Vertrag mit einem Verein eingehen.
 
-Eine Person spielt bei einem Match mit.
+Als Team möchte ich bei einem Match teilnehmen.
+
+Als Person möchte ich bei einem Match als Stürmer mitspielen.
 
 
 == Use Case Diagram
@@ -17,17 +18,18 @@ Eine Person spielt bei einem Match mit.
 @startuml
 left to right direction
 
-usecase "geht einen Vertrag mit einem Team ein" as UC1
+usecase "spielt match" as UC1
 
-usecase "nimmt bei einem Match teil" as UC2
+usecase "tragt matchergebnisse ein" as UC2
 
-usecase "spielt bei einem Match mit" as UC3
+usecase "asda" as UC3
 
 Person --> UC1
 Team --> UC2
 Person --> UC3
 @enduml
 ....
+
 
 == CLD
 
@@ -39,15 +41,14 @@ include::cld.puml[]
 == Fragen
 === Was bedeutet Stashing? In welchen Situationen wird dieses angewendet?
 [TIP]
-Es wird der aktuelle lokale Stand "zwischengespeichert", damit man in einem anderen Repo arebiten kann ohne den
-aktuellen Stand pushen und dann wieder pullen zu müssen. (Bsp. Wenn ein Bug beim Kunden auftritt, aber gerade an einem
-Feature gearbeitet wird, kann der Entwickler den Bug schnell beheben ohne das unvollständige Feature pushen und wieder
-pullen zu müssen)
+Beim Stashing wird der aktuelle lokale Zwischenstand versteckt bzw zwischengespeichert. Somit kann in einen anderen Branch gewechselt werden. Z.B wird auf einem Feature Branch ein Feature entwickelt, welches aber noch nicht bereit zum committen ist. Es muss aber auf einem anderen Branch ein Bug schnellstmöglich behoben werden. Mit stashing kann der aktuelle Feature Branch gesichert weredn ohne committet zu werden und es kann ohne Probleme am anderen Branch der Bug behoben werden.
 
 === Was bedeutet Cherry Picking? In welchen Situationen wird dieses angewendet?
 [TIP]
-Cherry Picking beschreibt das gezielte heraussuchen und clonen eines bestimmten commits (meist in einem anderen Branch)
-Dies erfolgt wennd der Stand eines bestimmten Commits zb in einem anderen Branch gebraucht wird.
+//Cherry Picking beschreibt das gezielte heraussuchen und clonen eines bestimmten commits (meist in einem anderen Branch)
+//Dies erfolgt wennd der Stand eines bestimmten Commits zb in einem anderen Branch gebraucht wird.
+
+Beim Cherry Picking kann ein bestimmter Commit aus einem anderen Branch auf den derzeitigen Head angewendet werden. Z.B wenn am frontend gearbeitet wird, aber ein Patch commmit im backend gemacht wurde, kann der Entwickler am Frontend den Patch commit in seinen Branch übernehmen und so mit dem Bug freien Backend weiterarbeiten.
 
 === Welche Möglichkeiten gibt es zur Container-Orchestrierung?
 [TIP]
@@ -61,11 +62,10 @@ werden wenn der Container, der das Backend beinhaltet, erfolgreich gestartet wor
 
 === Erläutern Sie den Unterschied zwischen Product Backlog und Sprint Backlog
 [TIP]
-Im Product Backlog befinden sich alle Funktionalitäten, die im laufe der Projektentwicklung implementiert werden müssen.
+Im Product Backlog befinden sich alle Funktionalitäten, die im Laufe der Projektentwicklung implementiert werden müssen.
 Der Sprint Backlog beinhaltet alle Punkte, die im aktuellen Sprit implementiert werden müssen.
 (also eine Untermenge des Product Backlogs)
 
 === Was versteht man unter einer Lookup-Table?
 [TIP]
-Ein Lookup Table beinhaltet daten, welche immer wieder gebraucht werdem. Somit werden sie nur 1 mal gespeichert und
-können von überall ausgelesen werden.
+Ein Lookup table ist eine meist alleinstehende Tabelle, die Daten enthält auf die Öfters zugegriffen werden müssen (meist daten die nicht kalkuliert werden könenn z.B Postleitzahlen, Telefonnummern, etc).

@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+
+usecase "Vertrag mit Verein eingehen" as UC1
+
+usecase "Matchergebnisse eintragen" as UC2
+
+usecase "Match spielen" as UC3
+
+Person --> UC1
+Person --> UC2
+Team --> UC3
+@enduml

@@ -51,18 +51,18 @@ Verteidiger
 Stürmer
 }
 
-Match "*" --* "2" Team
+Match -- Team
 
-Match "1" *-- "*"Einsatz
+Match "1" -- "*"Einsatz
 
-Einsatz "*" o-- "1" Position
+Einsatz "*" -- "1" Position
 
-Team "*" --* "1" Verein
+Team "*" -- "1" Verein
 
-Person "1" o-- "*" Vertrag
+Person "1" -- "*" Vertrag
 
-Vertrag "*" --o "1" Verein
+Vertrag "*" -- "1" Verein
 
-Vertrag "*" *-- "1" Job
+Vertrag "*" -- "1" Job
 
 @enduml
